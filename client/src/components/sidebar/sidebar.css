@@ -1,0 +1,132 @@
+.sidebar {
+  flex: 3;
+  margin: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.sidebar:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sidebarItem {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebarTitle {
+  margin: 20px 0 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.sidebarTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00c9a7, #fcb1d8);
+  border-radius: 6px;
+}
+
+.sidebarItem > img {
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease;
+}
+
+.sidebarItem > img:hover {
+  transform: scale(1.03);
+}
+
+.sidebarItem > p {
+  padding: 18px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 20px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sidebarListItem {
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #fef6fb, #e0f7fa);
+  color: #444;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.sidebarListItem:hover {
+  background: linear-gradient(135deg, #e0f7fa, #fef6fb);
+  transform: scale(1.05);
+}
+
+.sidebarSocial {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.sidebarIcon {
+  font-size: 20px;
+  color: #777;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebarIcon:hover {
+  color: #00c9a7;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px #b9f3f0);
+}
+.singlePostCategory {
+  display: inline-block;
+  background: linear-gradient(135deg, #e0f7fa, #fef6fb);
+  color: #0077b6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin: 12px 0px;
+  box-shadow: 0 4px 10px rgba(0, 119, 182, 0.08);
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.singlePostCategory:hover {
+  background: linear-gradient(135deg, #caf0f8, #fde2ff);
+  color: #023e8a;
+  transform: scale(1.05);
+  cursor: pointer;
+}

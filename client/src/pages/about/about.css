@@ -1,0 +1,106 @@
+.aboutContainer {
+    background: linear-gradient(135deg, #fef6ff, #e4f0ff);
+    padding: 3rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    color: #333; 
+  }
+
+  .aboutCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .aboutTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ff80ab;
+    margin-bottom: 0.5rem;
+  }
+
+  .aboutSub {
+    font-size: 1.5rem;
+    color: #6a5acd;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand {
+    font-weight: 600;
+    background: linear-gradient(to right, #ff80ab, #6a5acd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .aboutDesc {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .aboutImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .aboutSection {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .aboutSection h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #ff6f91;
+  }
+
+  .aboutSection p, .aboutSection ul {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .aboutSection ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .aboutSection ul li::before {
+    content: "✨ ";
+  }
+
+  .sidebarSocial {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 2rem 0;
+  }
+
+  .sidebarIcon {
+    font-size: 1.5rem;
+    color: #888;
+    transition: color 0.3s ease;
+  }
+
+  .sidebarIcon:hover {
+    color: #ff80ab;
+  }
+
+  .quote {
+    font-style: italic;
+    color: #555;
+    background: #fef0f7;
+    padding: 1rem;
+    border-left: 4px solid #ff80ab;
+    border-radius: 0.5rem;
+  }

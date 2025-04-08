@@ -1,0 +1,107 @@
+.top {
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  z-index: 999;
+  padding: 0 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.topLeft,
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.topCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topIcon {
+  font-size: 20px;
+  color: #444;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.topIcon:hover {
+  transform: rotate(5deg) scale(1.1);
+  color: #00bfa6;
+}
+
+.topList {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topListItem {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topListItem::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00bfa6;
+  transition: width 0.3s ease-in-out;
+}
+
+.topListItem:hover {
+  color: #00bfa6;
+  transform: translateY(-1px);
+}
+
+.topListItem:hover::after {
+  width: 100%;
+}
+
+.topImg {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bfa6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.topImg:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 191, 166, 0.3);
+}
+
+.topSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.topSearchIcon:hover {
+  color: #00bfa6;
+}
+
