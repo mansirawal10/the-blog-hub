@@ -1,49 +1,99 @@
-.login{
-    height: calc(100vh - 50px);
+.login {
+    height: calc(100vh ); /* Adjust for potential header height */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(https://i.pinimg.com/474x/d3/f9/09/d3f9095b2c1751776b5b4c17248638b4.jpg);
+    background: linear-gradient(135deg, #4fc3f7, #f06292);
     background-size: cover;
-}
-
-.loginTitle{
-    font-size: 50px;
-}
-.loginForm{
-    margin-top: 20px;
+    background-position: center;
+  }
+  
+  .loginTitle {
+    font-size: 3rem; /* Slightly larger, more modern */
+    color: #333; /* Darker, more readable text */
+    margin-bottom: 10px; /* More spacing */
+    font-weight: 500; /* Semi-bold for emphasis */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  }
+  
+  .loginForm {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-}
-.loginForm > label{
-    margin: 10px 0;
-}
-.loginInput{
-    padding: 10px;
-    background-color: white;
-    border: none;
-}
-.loginButton{
-    margin-top: 20px;
+    width: 350px; /* Limit form width for better readability */
+    padding: 40px; /* Add padding around the form */
+    border-radius: 12px; /* Soft rounded corners for the form */
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent white background for depth */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for lift */
+  }
+  
+  .loginForm > label {
+    margin: 15px 0 8px; /* More spacing, label closer to input */
+    color: #555; /* Slightly softer label color */
+    font-size: 0.95rem; /* Slightly smaller label */
+    font-weight: 500;
+  }
+  
+  .loginInput {
+    padding: 12px; /* More padding */
+    background-color: #f8f8f8; /* Light gray background for input */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners for input */
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease; /* Smooth border transition on focus */
+  }
+  
+  .loginInput:focus {
+    outline: none;
+    border-color: lightcoral; /* Accent color on focus */
+    box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2); /* Subtle focus ring */
+  }
+  
+  .loginButton {
+    margin-top: 30px; /* More spacing */
     cursor: pointer;
     background-color: lightcoral;
     color: white;
     border: none;
     border-radius: 10px;
-    padding: 10px;
-}
-.loginButton:disabled{
-    background-color: coral;
+    padding: 12px 20px; /* More horizontal padding */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.3); /* Subtle button shadow */
+  }
+  
+  .loginButton:hover {
+    background-color: #ff69b4; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.4);
+  }
+  
+  .loginButton:disabled {
+    background-color: #f08080; /* Darker coral for disabled */
     cursor: not-allowed;
-}
-.loginRegister{
+    opacity: 0.7; /* Slightly fade the disabled button */
+    box-shadow: none; /* Remove shadow when disabled */
+    transform: translateY(0); /* Ensure no lift when disabled */
+  }
+  
+  .loginRegister {
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 80px; /* Adjust top spacing */
+    right: 30px; /* Adjust right spacing */
+    background-color: transparent; /* Transparent background */
+    color: teal;
+    padding: 10px 20px;
+    border: 1px solid teal;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .loginRegister:hover {
     background-color: teal;
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-}
+  }

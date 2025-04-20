@@ -1,8 +1,8 @@
 .single{
     display: flex;
 }
-.singlePostImg{
+.singlePostImg {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    object-fit: contain;
+  }

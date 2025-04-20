@@ -29,9 +29,11 @@ export default function Register() {
 
   return (
     <div className='register'>
-      <span className="registerTitle">WELCOME!</span>
-      <span className="registerTitle">REGISTER</span>
+    <div className='registerwrap'>
+      
       <form className="registerForm" onSubmit={handleSubmit}>
+      <span className="registerTitle">REGISTERATION</span>
+
         <label>Username</label>
         <input 
           className='registerInput' 
@@ -62,6 +64,7 @@ export default function Register() {
         <Link className="link" to="/login">LOGIN</Link>
       </button>
       <span className="registerError">{error && "Something went wrong!"}</span>
+    </div>
     </div>
   );
 }

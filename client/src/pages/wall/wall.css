@@ -1,0 +1,153 @@
+/* General container for the wall */
+.wall-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, #B7B1F2, #FDB7EA, #FFDCCC); /* Peach/Orange, Pink, Lavender */
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Heading */
+.wall-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #1B56FD; /* Soft pink */
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+/* Form for adding notes */
+.wall-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background-color: #FBF3B9; /* Light peach */
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.wall-textarea {
+  resize: none;
+  border: 1px solid #ffcfdf; /* Light pink-peach border */
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.05rem;
+  height: 120px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  font-family: inherit;
+}
+
+.wall-button {
+  background-color: #cbf3f0; /* Light cyan */
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2.5rem;
+  color: #555;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.1rem;
+  align-self: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.wall-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Grid for displaying notes */
+.wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust min width if needed */
+  gap: 1.2rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/* Individual note cards */
+.note-card {
+  padding: 1.5rem;
+  min-height: 100px;
+  border-radius: 0.5rem; /* Slightly sharper corners for a paper look */
+  background-color: var(--note-color); /* Use dynamic pastel color */
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+  font-size: 1rem;
+  word-wrap: break-word;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotate(1deg); /* Subtle initial rotation */
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border */
+}
+
+
+.note-card:hover {
+  transform: translateY(-3px) rotate(0deg) scale(1.05); /* Lift and remove rotation on hover */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+/* Optional: Add a "torn paper" edge effect */
+.note-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card::before,
+.note-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-size: auto 100%;
+  opacity: 0.8;
+}
+
+.note-card::before {
+  top: -5px;
+}
+
+.note-card::after {
+  bottom: -5px;
+  transform: rotate(180deg);
+}
+
+/* Timestamp for notes */
+.note-timestamp {
+  font-size: 0.75rem;
+  color: #777;
+  text-align: right;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.delete-button {
+  position: absolute; /* Position the delete button relative to the note card */
+  top: 5px;        /* Adjust top spacing as needed */
+  right: 5px;       /* Adjust right spacing as needed */
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
+  color:black;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: background-color 0.2s ease;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.delete-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Style the FontAwesomeIcon inside the button if needed */
+.delete-button svg {
+  font-size: 1em; /* Adjust icon size */
+}

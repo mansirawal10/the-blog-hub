@@ -9,6 +9,7 @@ import TopBar from "./components/topbar/TopBar";
 import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import About from "./pages/about/About";
+import Wall from "./pages/wall/Wall"; 
 
 
 
@@ -27,7 +28,7 @@ function App() {
         <Route path="/settings" element={user ? <Settings /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
         <Route path="/about" element={<About />} /> 
-
+        <Route path="/wall" element={user ? <Wall /> : <Register />} />
       </Routes>
     </Router>
   );

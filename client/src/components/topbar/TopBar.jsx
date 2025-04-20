@@ -3,13 +3,17 @@ import React from 'react'
 import "./topbar.css"
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+import { useNavigate } from "react-router-dom";
 
 export default function TopBar() {
   const {user, dispatch} = useContext(Context);
   const PF = "http://localhost:5000/images/";
+  const navigate = useNavigate();
+
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
+    navigate("/login"); 
   };
   
   return (
@@ -26,7 +30,7 @@ export default function TopBar() {
             <Link className="link" to="/">HOME</Link>
           </li>
           <li className='topListItem'><Link className="link" to="/about">ABOUT</Link></li>
-          <li className='topListItem'><Link className="link" to="/">CONTACT</Link></li>
+          <li className='topListItem'><Link className="link" to="/wall">WALL</Link></li>
           <li className='topListItem'><Link className="link" to="/write">WRITE</Link></li>
           <li className='topListItem' onClick={handleLogout}>{user && "LOGOUT"}</li>
         </ul>
@@ -53,8 +57,6 @@ export default function TopBar() {
 
           )
         }
-
-        <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
       </div>
     </div>
   )
