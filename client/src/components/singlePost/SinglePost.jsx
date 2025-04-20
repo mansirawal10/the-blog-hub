@@ -34,11 +34,15 @@ export default function SinglePost() {
 
     const handleDelete = async () => {
         try {
+            // eslint-disable-next-line
             const res = await axios.delete(`/api/posts/${post._id}`, {
                 data: { username: user.username }
             });
             window.location.replace("/");
-        } catch (err) { }
+        } catch (err) { 
+            console.error("Error occurred:", err);
+
+        }
     }
 
     const handleUpdate = async () => {
