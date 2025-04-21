@@ -11,11 +11,25 @@ const wallNotesRoute = require('./routes/wallNotes');
 const multer = require("multer");
 const path = require("path");
 
+const allowedOrigins = [
+  "https://thestoryhub-blog.netlify.app", // Deployed frontend
+  "http://localhost:3000", // Local development
+];
+
 
 dotenv.config();
 
 // Add this BEFORE using routes!
-app.use(cors({ origin: "https://thestoryhub-blog.netlify.app" }));
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+}));
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
