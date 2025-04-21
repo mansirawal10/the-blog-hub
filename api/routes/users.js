@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // UPDATE
 router.put("/:id", async (req, res) => {
@@ -12,7 +12,6 @@ router.put("/:id", async (req, res) => {
             const salt = await bcrypt.genSalt(10);
             req.body.password = await bcrypt.hash(req.body.password, salt);
         }
-
         try {
             // Update the user document with the data provided in the request body
             const updatedUser = await User.findByIdAndUpdate(
