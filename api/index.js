@@ -6,7 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postsRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
-const wallNotesRoute = require("./routes/wallnotes");
+const wallNotesRoute = require('./routes/wallNotes');
 const multer = require("multer");
 const path = require("path");
 
