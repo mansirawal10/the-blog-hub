@@ -24,7 +24,7 @@ export default function Wall() {
   useEffect(() => {
     const getNotes = async () => {
       try {
-        const res = await fetch("/api/wallnotes");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/wallnotes`);
         const data = await res.json();
         setNotes(data);
       } catch (err) {
@@ -46,7 +46,7 @@ export default function Wall() {
     };
 
     try {
-      const response = await fetch(`/api/wallnotes`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/wallnotes`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newNote),
@@ -67,7 +67,7 @@ export default function Wall() {
   // Handle note deletion
   const handleDelete = async (noteId) => {
     try {
-      const response = await fetch(`/api/wallnotes/${noteId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/wallnotes/${noteId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: user.username }), // Send username for authorization
