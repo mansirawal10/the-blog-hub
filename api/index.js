@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
@@ -14,6 +15,8 @@ const path = require("path");
 dotenv.config();
 
 // Add this BEFORE using routes!
+app.use(cors({ origin: "https://thestoryhub-blog.netlify.app" }));
+
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
