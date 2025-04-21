@@ -3,7 +3,8 @@ import './post.css';
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = "https://the-blog-hub-jevy.onrender.com/images/";
+  const imageEndpoint = "https://thestoryhub-blog.netlify.app/images/"; // Adjust this to your actual image endpoint
+
   if (!post) return null;
 
   return (
@@ -11,7 +12,7 @@ export default function Post({ post }) {
       {post.photo && (
         <img
           className="postImg"
-          src={`${PF}${post.photo}`}
+          src={`${imageEndpoint}${post.photo}`}
           alt=''
         />
       )}

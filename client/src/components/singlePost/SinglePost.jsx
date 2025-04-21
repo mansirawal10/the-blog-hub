@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import './singlePost.css';
 import axios from "axios";
 import { Context } from "../../context/Context";
-const PF = "http://localhost:5000/images/";
+const imageEndpoint = "https://thestoryhub-blog.netlify.app/images/"; // Adjust this to your actual image endpoint
+
 
 
 
@@ -39,7 +40,7 @@ export default function SinglePost() {
                 data: { username: user.username }
             });
             window.location.replace("/");
-        } catch (err) { 
+        } catch (err) {
             console.error("Error occurred:", err);
 
         }
@@ -60,8 +61,14 @@ export default function SinglePost() {
         <div className='singlePost'>
             <div className='singlePostWrap'>
                 {post.photo && (
-                    <img className='singlePostImg' src={PF + post.photo} alt='' />
-                )}{
+                    <img
+                        className="singlePostImg"
+                        src={`${imageEndpoint}${post.photo}`}
+                        alt="Post"
+                    />
+                )}
+
+                {
                     updateMode ?
                         <input
                             type="text"
@@ -116,7 +123,7 @@ export default function SinglePost() {
                         <button className="singlePostButton" onClick={handleUpdate}>Update</button>
                         <button className="singlePostButton cancel" onClick={() => {
                             setUpdateMode(false);
-                            setTitle(post.title); 
+                            setTitle(post.title);
                             setDesc(post.desc);
                         }}>
                             Cancel
