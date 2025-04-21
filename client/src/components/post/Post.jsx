@@ -3,7 +3,7 @@ import './post.css';
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://the-blog-hub-jevy.onrender.com/images/";
   if (!post) return null;
 
   return (
