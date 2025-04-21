@@ -5,12 +5,15 @@ const bcrypt = require("bcryptjs");
 
 // CREATE NEW POST
 router.post("/", async (req, res) => {
-    const newPost = new Post(req.body);
-    try{
+    try {
+        const newPost = new Post({
+            ...req.body,
+            photo: `https://the-blog-hub-jevy.onrender.com/images/${req.body.photo}`,
+        });
         const savedPost = await newPost.save();
-        res.status(200).json(savedPost)
-    } catch(err){
-        res.status(500).json(err);
+        res.status(200).json(savedPost);
+    } catch (err) {
+        res.status(500).json({ error: "Failed to save post", details: err.message });
     }
 });
 
@@ -18,7 +21,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
-        
+
         if (!post) {
             return res.status(404).json("Post not found");
         }
@@ -87,13 +90,18 @@ router.get("/", async (req, res) => {
     const category = req.query.cat;
 
     try {
-        let posts;
+        let posts = await Post.find();
+        posts = posts.map(post => ({
+            ...post._doc,
+            photo: post.photo ? `https://the-blog-hub-jevy.onrender.com/images/${post.photo}` : null,
+        }));
+        ;
         if (username) {
             posts = await Post.find({ username });
         } else if (category) {
             posts = await Post.find({
                 categories: {
-                    $in: [category], 
+                    $in: [category],
                 },
             });
         } else {
