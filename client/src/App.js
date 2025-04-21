@@ -10,6 +10,9 @@ import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import About from "./pages/about/About";
 import Wall from "./pages/wall/Wall"; 
+import axios from "axios";
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 
 
